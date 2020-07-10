@@ -58,16 +58,200 @@ authors = {
     "despi": Author("Despoina Paschalidou", "https://paschalidoud.github.io/"),
     "angelos": Author("Angelos Katharopoulos", ""),
     "diou": Author("Christos Diou", "https://mug.ee.auth.gr/people/christos-diou/"),
-    "delo": Author("Anastasios Delopoulos", "https://mug.ee.auth.gr/people/anastasios-delopoulos/")
+    "delo": Author("Anastasios Delopoulos", "https://mug.ee.auth.gr/people/anastasios-delopoulos/"),
+    "frankie": Author("François Fleuret", "https://fleuret.org/francois"),
+    "apoorv": Author("Apoorv Vyas", "https://idiap.ch/~avyas"),
+    "nikos": Author("Nikolaos Pappas", "https://nik0spapp.github.io/")
 }
 
 conferences = {
+    "preprint": Conference("", "Preprint"),
     "icml": Conference("International Conference on Machine Learning", "ICML"),
     "eusipco": Conference("European Signal Processing Conference", "EUSIPCO"),
     "acmmm": Conference("ACM Multimedia Conference", "ACMM")
 }
 
 publications = [
+    Paper(
+        "Fast Transformers with Clustered Attention",
+        "https://clustered-transformers.github.io",
+        "imgs/teasers/clustered_attention.png",
+        author_list(authors, "apoorv", "angelos", "frankie"),
+        conferences["preprint"],
+        2020,
+        None,
+        [
+            Link("Abstract", None,
+                 ("Transformers have been proven a successful model for a "
+                  "variety of tasks in sequence modeling. However, computing the "
+                  "attention matrix, which is their key component, has quadratic "
+                  "complexity with respect to the sequence length, thus making "
+                  "them prohibitively expensive for large sequences. To address "
+                  "this, we propose clustered attention, which instead of "
+                  "computing the attention for every query, groups queries into "
+                  "clusters and computes attention just for the centroids. To "
+                  "further improve this approximation, we use the computed "
+                  "clusters to identify the keys with the highest attention per "
+                  "query and compute the exact key/query dot products. This "
+                  "results in a model with linear complexity with respect to the "
+                  "sequence length for a fixed number of clusters. We evaluate "
+                  "our approach on two automatic speech recognition datasets and "
+                  "show that our model consistently outperforms vanilla "
+                  "transformers for a given computational budget. Finally, we "
+                  "demonstrate that our model can approximate arbitrarily complex "
+                  "attention distributions with a minimal number of clusters by "
+                  "approximating a pretrained BERT model on GLUE and SQuAD "
+                  "benchmarks with only 25 clusters and no loss in "
+                  "performance."),
+                 None),
+            Link("Paper", "https://arxiv.org/pdf/2007.04825", None, None),
+            Link("Code", "https://github.com/idiap/fast-transformers", None, None),
+            Link("Bibtex", None, None,
+                 ("@article{vyas_et_al_2020,\n"
+                  "    author={Vyas, A. and Katharopoulos, A. and Fleuret, F.},\n"
+                  "    title={Fast Transformers with Clustered Attention},\n"
+                  "    journal={arXiv preprint arXiv:2007.04825},\n"
+                  "    year={2020}\n"
+                  "}"))
+        ]
+    ),
+
+    Paper(
+        "Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention",
+        "https://linear-transformers.com",
+        "imgs/teasers/transformer_rnn.png",
+        author_list(authors, "angelos", "apoorv", "nikos", "frankie"),
+        conferences["icml"],
+        2020,
+        None,
+        [
+            Link("Abstract", None,
+                 ("Transformers achieve remarkable performance in several tasks "
+                  "but due to their quadratic complexity, with respect to the "
+                  "input’s length, they are prohibitively slow for very long "
+                  "sequences. To address this limitation, we express the "
+                  "self-attention as a linear dot-product of kernel feature maps "
+                  "and make use of the associativity property of matrix products to "
+                  "reduce the complexity from O(N<sup>2</sup>) to O(N), where N "
+                  "is the sequence length. We show that this formulation permits an "
+                  "iterative implementation that dramatically accelerates "
+                  "autoregressive transformers and reveals their relationship "
+                  "to recurrent neural networks. Our linear transformers achieve "
+                  "similar performance to vanilla transformers and they are up to "
+                  "4000x faster on autoregressive prediction of very "
+                  "long sequences."),
+                 None),
+            Link("Paper", "https://arxiv.org/pdf/2006.16236.pdf", None, None),
+            Link("Explore", "https://colab.research.google.com/drive/1BV4OaWRAHYGeimO0cqHD86GfnfgUaKD4?usp=sharing", None, None),
+            Link("Video", "https://youtu.be/KBWh7XCUAi8", None, None),
+            Link("Slides", "data/linear_transformer_slides.pdf", None, None),
+            Link("Code", "https://github.com/idiap/fast-transformers", None, None),
+            Link("Bibtex", None, None,
+                 ("@inproceedings{katharopoulos2020lin,\n"
+                  "    title={Transformers are RNNs: Fast Autoregressive Transformers "
+                  "with Linear Attention},\n"
+                  "    author={Katharopoulos, A. and Vyas, A. and Pappas, N. and Fleuret, F.},\n"
+                  "    booktitle={Proceedings of the International Conference on Machine "
+                  "Learning (ICML)},\n"
+                  "    year={2020},\n"
+                  "    url={https://arxiv.org/pdf/2006.16236.pdf}\n"
+                  "}"))
+        ]
+    ),
+
+    Paper(
+        "Processing Megapixel Images with Deep Attention-Sampling Models",
+        "https://attention-sampling.com/",
+        "imgs/teasers/speed_limits.png",
+        author_list(authors, "angelos", "frankie"),
+        conferences["icml"],
+        2019,
+        None,
+        [
+            Link("Abstract", None,
+                 ("Existing deep architectures cannot operate on very large "
+                  "signals such as megapixel images due to computational and "
+                  "memory constraints. To tackle this limitation, we propose a "
+                  "fully differentiable end-to-end trainable model that samples "
+                  "and processes only a fraction of the full resolution input "
+                  "image. The locations to process are sampled from an attention "
+                  "distribution computed from a low resolution view of the input. "
+                  "We refer to our method as attention sampling and it can "
+                  "process images of several megapixels with a standard single "
+                  "GPU setup. We show that sampling from the attention "
+                  "distribution results in an unbiased estimator of the full "
+                  "model with minimal variance, and we derive an unbiased "
+                  "estimator of the gradient that we use to train our model "
+                  "end-to-end with a normal SGD procedure. This new method is "
+                  "evaluated on three classification tasks, where we show that it "
+                  "allows to reduce computation and memory footprint by an order "
+                  "of magnitude for the same accuracy as classical architectures. "
+                  "We also show the consistency of the sampling that indeed "
+                  "focuses on informative parts of the input images."),
+                 None),
+            Link("Paper", "https://arxiv.org/pdf/1905.03711.pdf", None, None),
+            Link("Poster", "data/ats_icml_poster.pdf", None, None),
+            Link("Slides", "data/ats_icml_slides.pdf", None, None),
+            Link("Code", "https://github.com/idiap/attention-sampling", None, None),
+            Link("Bibtex", None, None,
+                 ("@inproceedings{katharopoulos2019ats,\n"
+                  "    title={Processing Megapixel Images with Deep Attention-Sampling "
+                  "Models},\n"
+                  "    author={Katharopoulos, A. and Fleuret, F.},\n"
+                  "    booktitle={Proceedings of the International Conference on Machine "
+                  "Learning (ICML)},\n"
+                  "    year={2019},\n"
+                  "    type={Short oral},\n"
+                  "    url={https://arxiv.org/pdf/1905.03711.pdf}\n"
+                  "}"))
+        ]
+    ),
+
+    Paper(
+        "Not All Samples Are Created Equal: Deep Learning with Importance Sampling",
+        "https://importance-sampling.com/",
+        "imgs/teasers/variance_reduction.png",
+        author_list(authors, "angelos", "frankie"),
+        conferences["icml"],
+        2018,
+        None,
+        [
+            Link("Abstract", None,
+                 ("Deep neural network training spends most of the computation "
+                  "on examples that are properly handled, and could be "
+                  "ignored. We propose to mitigate this phenomenon with "
+                  "a principled importance sampling scheme that focuses "
+                  "computation  on  “informative”  examples, and reduces the "
+                  "variance of the stochastic gradients during training. Our "
+                  "contribution is twofold: first, we derive a tractable upper "
+                  "bound to the per-sample gradient norm, and second we derive "
+                  "an estimator of the variance reduction achieved with importance "
+                  "sampling, which enables us to switch it on when it will result "
+                  "in an actual speedup. The resulting scheme can be used by "
+                  "changing a few lines of code in a standard SGD procedure, and "
+                  "we demonstrate experimentally, on image classification, CNN "
+                  "fine-tuning, and RNN training, that for a fixed wall-clock "
+                  "time budget, it provides a reduction of the train losses of up "
+                  "to an order of magnitude and a relative improvement of test "
+                  "errors between 5% and 17%."),
+                 None),
+            Link("Paper", "https://arxiv.org/pdf/1803.00942.pdf", None, None),
+            Link("Poster", "data/is_icml_poster.pdf", None, None),
+            Link("Slides", "data/is_icml_slides.pdf", None, None),
+            Link("Code", "https://github.com/idiap/importance-sampling", None, None),
+            Link("Bibtex", None, None,
+                 ("@inproceedings{katharopoulos2018is,\n"
+                  "    title={Not All Samples Are Created Equal: Deep Learning with "
+                  "Importance Sampling},\n"
+                  "    author={Katharopoulos, A. and Fleuret, F.},\n"
+                  "    booktitle={Proceedings of the International Conference on Machine "
+                  "Learning (ICML)},\n"
+                  "    year={2018},\n"
+                  "    type={Short oral},\n"
+                  "    url={https://arxiv.org/pdf/1803.00942.pdf}\n"
+                  "}"))
+        ]
+    ),
 
     Paper(
         "Learning local feature aggregation functions with backpropagation",
