@@ -1,0 +1,289 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import argparse
+from collections import namedtuple
+import sys
+
+
+def _print(args, text, **kwargs):
+    if not args.quiet:
+        print(text, **kwargs)
+
+
+class Author(namedtuple("Author", ["name", "url"])):
+    @property
+    def is_me(self):
+        return self.name == "Angelos Katharopoulos"
+
+    @property
+    def first_name(self):
+        return self.name.split(" ")[0]
+
+    @property
+    def last_name(self):
+        return self.name.split(" ")[1]
+
+    @property
+    def initial(self):
+        return self.first_name[0]
+
+
+class Paper(namedtuple("Paper", [
+        "title",
+        "url",
+        "image",
+        "authors",
+        "conference",
+        "year",
+        "special",
+        "links"
+    ])):
+    pass
+
+
+class Conference(namedtuple("Conference", ["name", "short_name"])):
+    pass
+
+
+class Link(namedtuple("Link", ["name", "url", "html", "text"])):
+    pass
+
+
+def author_list(authors, *names):
+    return [authors[n] for n in names]
+
+
+authors = {
+    "despi": Author("Despoina Paschalidou", "https://paschalidoud.github.io/"),
+    "angelos": Author("Angelos Katharopoulos", ""),
+    "diou": Author("Christos Diou", "https://mug.ee.auth.gr/people/christos-diou/"),
+    "delo": Author("Anastasios Delopoulos", "https://mug.ee.auth.gr/people/anastasios-delopoulos/")
+}
+
+conferences = {
+    "icml": Conference("International Conference on Machine Learning", "ICML"),
+    "eusipco": Conference("European Signal Processing Conference", "EUSIPCO"),
+    "acmmm": Conference("ACM Multimedia Conference", "ACMM")
+}
+
+publications = [
+
+    Paper(
+        "Learning local feature aggregation functions with backpropagation",
+        "https://arxiv.org/pdf/1706.08580.pdf",
+        "imgs/teasers/local_feature_aggregation.png",
+        author_list(authors, "despi", "angelos", "diou", "delo"),
+        conferences["eusipco"],
+        2017,
+        None,
+        [
+            Link("Abstract", None,
+                 ("This paper introduces a family of local feature aggregation "
+                  "functions and a novel method to estimate their parameters, "
+                  "such that they generate optimal representations for "
+                  "classification (or any task that can be expressed as a cost "
+                  "function minimization problem). To achieve that, we compose "
+                  "the local feature aggregation function with the classifier "
+                  "cost function and we backpropagate the gradient of this cost "
+                  "function in order to update the local feature aggregation "
+                  "function parameters. Experiments on synthetic datasets "
+                  "indicate that our method discovers parameters that model the "
+                  "class-relevant information in addition to the local feature "
+                  "space. Further experiments on a variety of motion and visual "
+                  "descriptors, both on image and video datasets, show that our "
+                  "method outperforms other state-of-the-art local feature "
+                  "aggregation functions, such as Bag of Words, Fisher Vectors "
+                  "and VLAD, by a large margin."),
+                  None),
+            Link("Paper", "https://arxiv.org/pdf/1706.08580.pdf", None, None),
+            Link("Poster", "data/eusipco_poster.pdf", None, None),
+            Link("Code", "https://github.com/paschalidoud/feature-aggregation", None, None),
+            Link("Bibtex", None, None,
+                 ("@inproceedings{katharopoulos2017learning\n"
+                  "      title = {Learning local feature aggregation functions "
+                  "with backpropagation},\n"
+                  "      author = {Paschalidou, Despoina and Katharopoulos, Angelos "
+                  "and Diou, Christos and Delopoulos, Anastasios},\n"
+                  "      publisher = {IEEE},\n"
+                  "      month = aug,\n"
+                  "      year = {2017},\n"
+                  "      url = {http://ieeexplore.ieee.org/Abstract/document/8081307/},\n"
+                  "}"))
+        ]
+    ),
+
+    Paper(
+        "Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets",
+        "http://ldaplusplus.com", # "https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf",
+        "imgs/teasers/fslda.png",
+        author_list(authors, "angelos", "despi", "diou", "delo"),
+        conferences["acmmm"],
+        2016,
+        None,
+        [
+            Link("Abstract", None, 
+                 ("This paper introduces fsLDA, a fast variational inference "
+                  "method for supervised LDA, which overcomes the computational "
+                  "limitations of the original supervised LDA and enables its "
+                  "application in large-scale video datasets. In addition to its "
+                  "scalability, our method also overcomes the drawbacks of "
+                  "standard, unsupervised LDA for video, including its focus on "
+                  "dominant but often irrelevant video information (e.g. "
+                  "background, camera motion). As a result, experiments in the "
+                  "UCF11 and UCF101 datasets show that our method consistently "
+                  "outperforms unsupervised LDA in every metric. Furthermore, "
+                  "analysis shows that class-relevant topics of fsLDA lead to "
+                  "sparse video representations and encapsulate high-level "
+                  "information corresponding to parts of video events, which we "
+                  "denote 'micro-events'"),
+                 None),
+            # Link("Project page", "http://ldaplusplus.com", None, None),
+            Link("Paper", "https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf", None, None),
+            Link("Poster", "data/fslda_poster.pdf", None, None),
+            Link("Code", "https://github.com/angeloskath/supervised-lda", None, None),
+            Link("Blog", "https://mug.ee.auth.gr/discovering-micro-events-video-data-using-topic-modeling/", None, None),
+            Link("Bibtex", None, None,
+                 ("@inproceedings{katharopoulos2016fast\n"
+                  "        title = {Fast Supervised LDA for Discovering Micro-Events "
+                  "in Large-Scale Video Datasets},\n"
+                  "        author = {Katharopoulos, Angelos and Paschalidou, Despoina and "
+                  "Diou, Christos and Delopoulos, Anastasios},\n"
+                  "        booktitle = {Proceedings of the 2016 ACM on Multimedia Conference},\n"
+                  "        pages = {332,336},\n"
+                  "        month = oct,\n"
+                  "        year = {2016},\n"
+                  "        url = {http://dl.acm.org/citation.cfm?id=2967237},\n"
+                  "        month_numeric = {10}\n"
+                  "}"))
+        ]
+    )
+]
+
+
+def build_publications_list(publications):
+    def image(paper):
+        if paper.image is not None:
+            return '<img src="{}" alt="{}" />'.format(
+                paper.image, paper.title
+            )
+        else:
+            return '&nbsp;'
+
+    def title(paper):
+        return '<a href="{}">{}</a>'.format(paper.url, paper.title)
+
+    def authors(paper):
+        def author(author):
+            if author.is_me:
+                return '<strong class="author">{}. {}</strong>'.format(
+                    author.initial, author.last_name
+                )
+            else:
+                return '<a href="{}" class="author">{}. {}</a>'.format(
+                    author.url, author.initial, author.last_name
+                )
+        return "".join(author(a) for a in paper.authors)
+
+    def conference(paper):
+        cf = '{}, {}'.format(paper.conference.short_name, paper.year)
+        if paper.special is not None:
+            cf = cf + '<span class="special">   ({})</span>'.format(paper.special)
+        return cf
+
+    def links(paper):
+        def links_list(paper):
+            def link(i, link):
+                if link.url is not None:
+                    # return '<a href="{}">{}</a>'.format(link.url, link.name)
+                    return '<a href="{}" data-type="{}">{}</a>'.format(link.url, link.name, link.name)
+                else:
+                    return '<a href="#" data-type="{}" data-index="{}">{}</a>'.format(link.name, i, link.name)
+            return "".join(
+                link(i, l) for i, l in enumerate(paper.links)
+            )
+
+        def links_content(paper):
+            def content(i, link):
+                if link.url is not None:
+                    return ""
+                return '<div class="link-content" data-index="{}">{}</div>'.format(
+                    i, link.html if link.html is not None
+                       else '<pre>' + link.text + "</pre>"
+                )
+            return "".join(content(i, link) for i, link in enumerate(paper.links))
+        return links_list(paper) + links_content(paper)
+
+    def paper(p):
+        return ('<div class="paper">'
+                    '<div class="image">{}</div>'
+                    '<div class="content">'
+                        '<div class="paper-title">{}</div>'
+                        '<div class="authors">{}</div>'
+                        '<div class="conference">{}</div>'
+                        '<div class="links">{}</div>'
+                    '</div>'
+                    '<div class="clear"></div>'
+                '</div>').format(
+                    image(p),
+                    title(p),
+                    authors(p),
+                    conference(p),
+                    links(p)
+                )
+
+    return "".join(paper(p) for p in publications)
+
+
+def main(argv):
+    parser = argparse.ArgumentParser(
+        description="Create a publication list and insert in into an html file"
+    )
+    parser.add_argument(
+        "file",
+        help="The html file to insert the publications to"
+    )
+
+    parser.add_argument(
+        "--safe", "-s",
+        action="store_true",
+        help="Do not overwrite the file but create one with suffix .new"
+    )
+    parser.add_argument(
+        "--quiet", "-q",
+        action="store_true",
+        help="Do not output anything to stdout/stderr"
+    )
+
+    args = parser.parse_args(argv)
+
+    # Read the file
+    with open(args.file) as f:
+        html = f.read()
+
+    # Find the fence comments
+    start_text = "<!-- start publication list -->"
+    end_text = "<!-- end publication list -->"
+    start = html.find(start_text)
+    end = html.find(end_text, start)
+    if end < start or start < 0:
+        _print(args, "Could not find the fence comments", file=sys.stderr)
+        sys.exit(1)
+
+    # Build the publication list in html
+    replacement = build_publications_list(publications)
+
+    # Update the html and save it
+    html = html[:start+len(start_text)] + replacement + html[end:]
+
+    # If safe is set do not overwrite the input file
+    if args.safe:
+        with open(args.file + ".new", "w") as f:
+            f.write(html)
+    else:
+        with open(args.file, "w") as f:
+            f.write(html)
+
+
+if __name__ == "__main__":
+    main(None)

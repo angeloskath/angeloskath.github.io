@@ -1,0 +1,132 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Angelos Katharopoulos - Personal Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <link href="normalize.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+        <link rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+              integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+              crossorigin="anonymous" />
+         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+               rel="stylesheet" />
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <h1>Angelos Katharopoulos</h1>
+                <div id="intro-img">
+                    <img src="imgs/angelos.jpg" alt="Angelos Katharopoulos" />
+                    <div id="contact">
+                        <a href=""><i class="fa fa-envelope"></i></a>
+                        <a href=""><i class="fa fa-user-graduate"></i></a>
+                        <a href=""><i class="fab fa-github"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div id="intro">
+                    <p>
+                    Hello! I am a PhD student at <a
+                    href="https://idiap.ch/">Idiap Research Institute</a> and
+                    <a href="https://epfl.ch">EPFL</a> since March 2017. My PhD
+                    advisor is <a href="https://fleuret.org/francois">François
+                    Fleuret</a>.
+                    </p>
+
+                    <p>
+                    Previously, I studied electrical engineering in <a
+                    href="http://ee.auth.gr/en/">Aristotle University of
+                    Thessaloniki</a> and I worked with <a
+                    href="https://mug.ee.auth.gr/people/christos-diou/">Christos
+                    Diou</a> and <a
+                    href="https://mug.ee.auth.gr/people/anastasios-delopoulos/">Anastasios
+                    Delopoulos</a>.
+                    </p>
+
+                    <p>
+                    My research is in machine learning and in particular, I am
+                    focusing on making deep neural networks train with less
+                    compute, less memory and less samples.
+                    </p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div id="header-links">
+                <ul>
+                    <li><a href="">Publications</a></li>
+                    <li><a href="">Software</a></li>
+                    <li><a href="">Misc</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-header" id="publications">Publications</h2>
+            <!-- start publication list --><div class="paper"><div class="image"><img src="imgs/teasers/local_feature_aggregation.png" alt="Learning local feature aggregation functions with backpropagation" /></div><div class="content"><div class="paper-title"><a href="https://arxiv.org/pdf/1706.08580.pdf">Learning local feature aggregation functions with backpropagation</a></div><div class="authors"><a href="https://paschalidoud.github.io/" class="author">D. Paschalidou</a><strong class="author">A. Katharopoulos</strong><a href="https://mug.ee.auth.gr/people/christos-diou/" class="author">C. Diou</a><a href="https://mug.ee.auth.gr/people/anastasios-delopoulos/" class="author">A. Delopoulos</a></div><div class="conference">EUSIPCO, 2017</div><div class="links"><a href="#" data-type="Abstract" data-index="0">Abstract</a><a href="https://arxiv.org/pdf/1706.08580.pdf" data-type="Paper">Paper</a><a href="data/eusipco_poster.pdf" data-type="Poster">Poster</a><a href="https://github.com/paschalidoud/feature-aggregation" data-type="Code">Code</a><a href="#" data-type="Bibtex" data-index="4">Bibtex</a><div class="link-content" data-index="0">This paper introduces a family of local feature aggregation functions and a novel method to estimate their parameters, such that they generate optimal representations for classification (or any task that can be expressed as a cost function minimization problem). To achieve that, we compose the local feature aggregation function with the classifier cost function and we backpropagate the gradient of this cost function in order to update the local feature aggregation function parameters. Experiments on synthetic datasets indicate that our method discovers parameters that model the class-relevant information in addition to the local feature space. Further experiments on a variety of motion and visual descriptors, both on image and video datasets, show that our method outperforms other state-of-the-art local feature aggregation functions, such as Bag of Words, Fisher Vectors and VLAD, by a large margin.</div><div class="link-content" data-index="4"><pre>@inproceedings{katharopoulos2017learning
+      title = {Learning local feature aggregation functions with backpropagation},
+      author = {Paschalidou, Despoina and Katharopoulos, Angelos and Diou, Christos and Delopoulos, Anastasios},
+      publisher = {IEEE},
+      month = aug,
+      year = {2017},
+      url = {http://ieeexplore.ieee.org/Abstract/document/8081307/},
+}</pre></div></div></div><div class="clear"></div></div><div class="paper"><div class="image"><img src="imgs/teasers/fslda.png" alt="Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets" /></div><div class="content"><div class="paper-title"><a href="http://ldaplusplus.com">Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets</a></div><div class="authors"><strong class="author">A. Katharopoulos</strong><a href="https://paschalidoud.github.io/" class="author">D. Paschalidou</a><a href="https://mug.ee.auth.gr/people/christos-diou/" class="author">C. Diou</a><a href="https://mug.ee.auth.gr/people/anastasios-delopoulos/" class="author">A. Delopoulos</a></div><div class="conference">ACMM, 2016</div><div class="links"><a href="#" data-type="Abstract" data-index="0">Abstract</a><a href="https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf" data-type="Paper">Paper</a><a href="data/fslda_poster.pdf" data-type="Poster">Poster</a><a href="https://github.com/angeloskath/supervised-lda" data-type="Code">Code</a><a href="https://mug.ee.auth.gr/discovering-micro-events-video-data-using-topic-modeling/" data-type="Blog">Blog</a><a href="#" data-type="Bibtex" data-index="5">Bibtex</a><div class="link-content" data-index="0">This paper introduces fsLDA, a fast variational inference method for supervised LDA, which overcomes the computational limitations of the original supervised LDA and enables its application in large-scale video datasets. In addition to its scalability, our method also overcomes the drawbacks of standard, unsupervised LDA for video, including its focus on dominant but often irrelevant video information (e.g. background, camera motion). As a result, experiments in the UCF11 and UCF101 datasets show that our method consistently outperforms unsupervised LDA in every metric. Furthermore, analysis shows that class-relevant topics of fsLDA lead to sparse video representations and encapsulate high-level information corresponding to parts of video events, which we denote 'micro-events'</div><div class="link-content" data-index="5"><pre>@inproceedings{katharopoulos2016fast
+        title = {Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets},
+        author = {Katharopoulos, Angelos and Paschalidou, Despoina and Diou, Christos and Delopoulos, Anastasios},
+        booktitle = {Proceedings of the 2016 ACM on Multimedia Conference},
+        pages = {332,336},
+        month = oct,
+        year = {2016},
+        url = {http://dl.acm.org/citation.cfm?id=2967237},
+        month_numeric = {10}
+}</pre></div></div></div><div class="clear"></div></div><!-- end publication list -->
+        </div>
+
+        <!-- Javascript for showing and hiding the abstract and bibtex -->
+        <script type="text/javascript">
+            document.querySelectorAll(".links").forEach(function (p) {
+                p.addEventListener("click", function (ev) {
+                    // Make sure that the click is coming from a link
+                    if (ev.target.nodeName != "A") {
+                        return;
+                    }
+
+                    // Find the index of the div to toggle or return
+                    var i = ev.target.dataset["index"];
+                    if (i == undefined) {
+                        return;
+                    }
+
+                    // Make sure to remove something else that was displayed
+                    // and toggle the current one
+                    Array.prototype.forEach.call(
+                        ev.target.parentNode.children,
+                        function (sibling) {
+                            // We don't care about links etc
+                            if (sibling.nodeName != "DIV") {
+                                return;
+                            }
+
+                            // Hide others
+                            if (sibling.dataset["index"] != i) {
+                                sibling.style.display = "none";
+                            }
+
+                            // toggle the correct one
+                            else {
+                                if (sibling.style.display != "block") {
+                                    sibling.style.display = "block";
+                                } else {
+                                    sibling.style.display = "none";
+                                }
+                            }
+                        }
+                    );
+                    ev.preventDefault();
+                });
+            });
+        </script>
+    </body>
+</html>
