@@ -11,6 +11,10 @@ a:hover {color: #2707f4;}
     max-width: 800px;
     margin: 0 auto;
 }
+.container p {
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 /* Header styles */
 #header {
@@ -167,3 +171,28 @@ a:hover {color: #2707f4;}
         margin: 0 2.5%;
     }
 }
+
+/* Software project styles */
+.software-project {
+    margin-bottom: 20px;
+}
+.software-project .title {
+    font-size: 110%;
+    font-weight: bold;
+    color: #222;
+}
+.software-project .info {
+    float: left;
+    width: 30%;
+    margin-right: 20px;
+    text-align: right;
+}
+.software-project .info div {margin-bottom: 5px;}
+
+/* Footer style */
+#footer {
+    font-size: 80%;
+    margin: 20px 0;
+}
+#footer span {float: right;}
+#footer span:first-child {float: left;}
