@@ -57,9 +57,10 @@
         </div>
         <div id="header-links">
             <ul>
-                <li><a href="">Publications</a></li>
-                <li><a href="">Software</a></li>
-                <li><a href="">Misc</a></li>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#software">Software</a></li>
+                <!--<li><a href="/misc.html">Misc</a></li>-->
             </ul>
         </div>
 
@@ -110,7 +111,7 @@
         </div>
 
         <div class="container">
-            <h2>Software</h2>
+            <h2 id="software">Software</h2>
             <p>The following is a non-exhaustive list of open source software
             projects that I started or contribute to. They are at various
             stages of development and usefulness so tread carefully. Each
@@ -265,8 +266,8 @@
             </div>
         </div>
 
-        <!-- Javascript for showing and hiding the abstract and bibtex -->
         <script type="text/javascript">
+            // Listen to pub link clicks and show/hide abstract and bibtex
             document.querySelectorAll(".links").forEach(function (p) {
                 p.addEventListener("click", function (ev) {
                     // Make sure that the click is coming from a link
@@ -306,6 +307,17 @@
                         }
                     );
                     ev.preventDefault();
+                });
+            });
+
+            // Listen to anchor links and scroll them into view
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
         </script>
