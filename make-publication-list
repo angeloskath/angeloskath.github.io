@@ -144,7 +144,7 @@ publications = [
             Link("Paper", "https://arxiv.org/pdf/2006.16236.pdf", None, None),
             Link("Explore", "https://colab.research.google.com/drive/1BV4OaWRAHYGeimO0cqHD86GfnfgUaKD4?usp=sharing", None, None),
             Link("Video", "https://youtu.be/KBWh7XCUAi8", None, None),
-            Link("Slides", "data/linear_transformer_slides.pdf", None, None),
+            Link("Slides", "data/linear_transformers_slides.pdf", None, None),
             Link("Code", "https://github.com/idiap/fast-transformers", None, None),
             Link("Bibtex", None, None,
                  ("@inproceedings{katharopoulos2020lin,\n"
