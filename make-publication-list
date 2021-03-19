@@ -61,11 +61,14 @@ authors = {
     "delo": Author("Anastasios Delopoulos", "https://mug.ee.auth.gr/people/anastasios-delopoulos/"),
     "frankie": Author("François Fleuret", "https://fleuret.org/francois"),
     "apoorv": Author("Apoorv Vyas", "https://idiap.ch/~avyas"),
-    "nikos": Author("Nikolaos Pappas", "https://nik0spapp.github.io/")
+    "nikos": Author("Nikolaos Pappas", "https://nik0spapp.github.io/"),
+    "ageiger": Author("Andreas Geiger", "http://www.cvlibs.net/"),
+    "sfidler": Author("Sanja Fidler", "https://www.cs.utoronto.ca/~fidler/")
 }
 
 conferences = {
     "preprint": Conference("", "Preprint"),
+    "cvpr": Conference("Computer Vision and Pattern Recognition", "CVPR"),
     "neurips": Conference("Neural Information Processing Systems", "NeurIPS"),
     "icml": Conference("International Conference on Machine Learning", "ICML"),
     "eusipco": Conference("European Signal Processing Conference", "EUSIPCO"),
@@ -73,6 +76,57 @@ conferences = {
 }
 
 publications = [
+    Paper(
+        "Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks",
+        "https://paschalidoud.github.io/neural_parts",
+        "imgs/teasers/neural_parts.png",
+        author_list(authors, "despi", "angelos", "ageiger", "sfidler"),
+        conferences["cvpr"],
+        2021,
+        None,
+        [
+            Link("Abstract", None,
+                 ("Impressive progress in 3D shape extraction led to "
+                  "representations that can capture object geometries with high "
+                  "fidelity. In parallel, primitive-based methods seek to "
+                  "represent objects as semantically consistent part "
+                  "arrangements. However, due to the simplicity of existing "
+                  "primitive representations, these methods fail to accurately "
+                  "reconstruct 3D shapes using a small number of "
+                  "primitives/parts. We address the trade-off between "
+                  "reconstruction quality and number of parts with Neural Parts, "
+                  "a novel 3D primitive representation that defines primitives "
+                  "using an Invertible Neural Network (INN) which implements "
+                  "homeomorphic mappings between a sphere and the target object. "
+                  "The INN allows us to compute the inverse mapping of the "
+                  "homeomorphism, which in turn, enables the efficient "
+                  "computation of both the implicit surface function of a "
+                  "primitive and its mesh, without any additional "
+                  "post-processing. Our model learns to parse 3D objects into "
+                  "semantically consistent part arrangements without any "
+                  "part-level supervision. Evaluations on ShapeNet, D-FAUST and "
+                  "FreiHAND demonstrate that our primitives can capture complex "
+                  "geometries and thus simultaneously achieve geometrically "
+                  "accurate as well as interpretable reconstructions using an "
+                  "order of magnitude fewer primitives than state-of-the-art "
+                  "shape abstraction methods."),
+                 None),
+            Link("Paper", "https://arxiv.org/pdf/2103.10429", None, None),
+            Link("Explore", "https://paschalidoud.github.io/neural_parts", None, None),
+            Link("Bibtex", None, None,
+                 ("@inproceedings{paschalidou2021nps,\n"
+                  "    title={Neural Parts: Learning Expressive 3D Shape "
+                  "Abstractions with Invertible Neural Networks},\n"
+                  "    author={Paschalidou, D. and Katharopoulos, A. and "
+                  "Geiger, A. and Fidler, S.},\n"
+                  "    booktitle={{Proceedings IEEE Conf. on Computer Vision "
+                  "and Pattern Recognition (CVPR)}},\n"
+                  "    year={2021},\n"
+                  "    url={https://arxiv.org/pdf/2103.10429}\n"
+                  "}"))
+        ]
+    ),
+
     Paper(
         "Fast Transformers with Clustered Attention",
         "https://clustered-transformers.github.io",
