@@ -113,6 +113,9 @@ publications = [
                  None),
             Link("Paper", "https://arxiv.org/pdf/2103.10429", None, None),
             Link("Explore", "https://paschalidoud.github.io/neural_parts", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=6WK3B0IZJsw", None, None),
+            Link("Poster", "https://paschalidoud.github.io/data/Paschalidou2021CVPR_poster.pdf", None, None),
+            Link("Code", "https://github.com/paschalidoud/neural_parts", None, None),
             Link("Bibtex", None, None,
                  ("@inproceedings{paschalidou2021nps,\n"
                   "    title={Neural Parts: Learning Expressive 3D Shape "
