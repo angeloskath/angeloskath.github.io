@@ -77,6 +77,17 @@
             #examples-table {
                 margin-bottom: 20px;
             }
+            .presentations-list li {
+                line-height: 180%;
+            }
+            .presentation-date:before {
+                content: "on";
+                display: inline-block;
+                padding: 0px 5px 0px 5px;
+            }
+            .presentation-date {
+                font-style: italic;
+            }
         </style>
     </head>
     <body>
@@ -102,11 +113,15 @@
             </p>
 
             <p>
-                <ul>
+                <ul class="presentations-list">
+                    <li>
+                        <i><a href="/data/thesis_presentation.pdf">Stop Wasting
+                        my FLOPs</a></i> @ My PhD Defense <span class="presentation-date">14 Dec 2021</span>
+                    </li>
                     <li>
                         <i><a href="/data/ml_collective_slides.pdf">Efficient
                         Transformers: Kernels and More</a></i> @ <a
-                        href="http://mlcollective.org/dlct/">ML Collective</a>
+                        href="http://mlcollective.org/dlct/">ML Collective</a> <span class="presentation-date">30 Oct 2021</span>
                     </li>
                 </ul>
             </p>
