@@ -63,7 +63,11 @@ authors = {
     "apoorv": Author("Apoorv Vyas", "https://idiap.ch/~avyas"),
     "nikos": Author("Nikolaos Pappas", "https://nik0spapp.github.io/"),
     "ageiger": Author("Andreas Geiger", "http://www.cvlibs.net/"),
-    "sfidler": Author("Sanja Fidler", "https://www.cs.utoronto.ca/~fidler/")
+    "sfidler": Author("Sanja Fidler", "https://www.cs.utoronto.ca/~fidler/"),
+    "fweers": Author("Floris Weers", ""),
+    "vshankar": Author("Vaishaal Shankar", "http://vaishaal.com/"),
+    "yyang": Author("Yinfei Yang", ""),
+    "tom_g": Author("Tom Gunter", ""),
 }
 
 conferences = {
@@ -76,6 +80,47 @@ conferences = {
 }
 
 publications = [
+    Paper(
+        "Self Supervision Does Not Help Natural Language Supervision at Scale",
+        "",
+        "imgs/teasers/mae-clip.png",
+        author_list(authors, "fweers", "vshankar", "angelos", "yyang", "tom_g"),
+        conferences["cvpr"],
+        2023,
+        None,
+        [
+            Link("Abstract", None,
+                 ("Self supervision and natural language supervision have emerged as two exciting "
+                  "ways to train general purpose image encoders which excel at a variety of "
+                  "downstream tasks. Recent works such as M3AE [31] and SLIP [64] have suggested "
+                  "that these approaches can be effectively combined, but most notably their "
+                  "results use small (<20M examples) pre-training datasets and don’t effectively "
+                  "reflect the large-scale regime (>100M samples) that is commonly used for these "
+                  "approaches. Here we investigate whether a similar approach can be effective "
+                  "when trained with a much larger amount of data. We find that a combination of "
+                  "two state of the art approaches: masked auto-encoders, MAE [38] and contrastive "
+                  "language image pre-training, CLIP [69] provides a benefit over CLIP when "
+                  "trained on a corpus of 11.3M image-text pairs, but little to no benefit (as "
+                  "evaluated on a suite of common vision tasks) over CLIP when trained on a large "
+                  "corpus of 1.4B images. Our work provides some much needed clarity into the "
+                  "effectiveness (or lack thereof) of self supervision for large-scale image-text "
+                  "training."),
+                 None),
+            Link("Paper", "https://arxiv.org/pdf/2301.07836", None, None),
+            Link("Bibtex", None, None,
+                 ("@inproceedings{weers2023mae_clip,\n"
+                  "    title={Self Supervision Does Not Help Natural Language "
+                  "Supervision at Scale},\n"
+                  "    author={Weers, F. and Shankar, V. and Katharopoulos, A. "
+                  "and Yang, Y. and Gunter, T.},\n"
+                  "    booktitle={{Proceedings IEEE Conf. on Computer Vision "
+                  "and Pattern Recognition (CVPR)}},\n"
+                  "    year={2023},\n"
+                  "    url={https://arxiv.org/pdf/2301.07836}\n"
+                  "}"))
+        ]
+    ),
+
     Paper(
         "Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks",
         "https://paschalidoud.github.io/neural_parts",

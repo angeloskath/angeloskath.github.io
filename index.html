@@ -21,7 +21,7 @@
                 <div id="intro-img">
                     <img src="imgs/angelos.jpg" alt="Angelos Katharopoulos" />
                     <div id="contact">
-                        <a href="mailto:angelos.katharopoulos@idiap.ch"><i class="fa fa-envelope"></i></a>
+                        <a href="mailto:a_katharopoulos@apple.com"><i class="fa fa-envelope"></i></a>
                         <a href="https://scholar.google.com/citations?user=CNSO4uIAAAAJ&hl=en"><i class="fa fa-user-graduate"></i></a>
                         <a href="https://github.com/angeloskath"><i class="fab fa-github"></i></a>
                         <a href="https://twitter.com/angeloskath"><i class="fab fa-twitter"></i></a>
@@ -29,10 +29,17 @@
                 </div>
                 <div id="intro">
                     <p>
-                    Hello! I am a PhD student at <a
+                    Hi! I am currently at the Machine Learning Research
+                    group at Apple. I am interested in making deep
+                    neural networks train with less compute, less memory and
+                    less samples.
+                    </p>
+
+                    <p>
+                    I completed my PhD at <a
                     href="https://idiap.ch/">Idiap Research Institute</a> and
-                    <a href="https://epfl.ch">EPFL</a> since March 2017. My PhD
-                    advisor is <a href="https://fleuret.org/francois">François
+                    <a href="https://epfl.ch">EPFL</a> under the supervision of
+                    <a href="https://fleuret.org/francois">François
                     Fleuret</a>.
                     </p>
 
@@ -44,12 +51,6 @@
                     Diou</a> and <a
                     href="https://mug.ee.auth.gr/people/anastasios-delopoulos/">Anastasios
                     Delopoulos</a>.
-                    </p>
-
-                    <p>
-                    My research is in machine learning and in particular, I am
-                    focusing on making deep neural networks train with less
-                    compute, less memory and less samples.
                     </p>
                 </div>
             </div>
@@ -66,7 +67,13 @@
 
         <div class="container">
             <h2 class="section-header" id="publications">Publications</h2>
-            <!-- start publication list --><div class="paper"><div class="image"><img src="imgs/teasers/neural_parts.png" alt="Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks" /></div><div class="content"><div class="paper-title"><a href="https://paschalidoud.github.io/neural_parts">Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks</a></div><div class="authors"><a href="https://paschalidoud.github.io/" class="author">D. Paschalidou</a><strong class="author">A. Katharopoulos</strong><a href="http://www.cvlibs.net/" class="author">A. Geiger</a><a href="https://www.cs.utoronto.ca/~fidler/" class="author">S. Fidler</a></div><div class="conference">CVPR, 2021</div><div class="links"><a href="#" data-type="Abstract" data-index="0">Abstract</a><a href="https://arxiv.org/pdf/2103.10429" data-type="Paper">Paper</a><a href="https://paschalidoud.github.io/neural_parts" data-type="Explore">Explore</a><a href="https://www.youtube.com/watch?v=6WK3B0IZJsw" data-type="Video">Video</a><a href="https://paschalidoud.github.io/data/Paschalidou2021CVPR_poster.pdf" data-type="Poster">Poster</a><a href="https://github.com/paschalidoud/neural_parts" data-type="Code">Code</a><a href="#" data-type="Bibtex" data-index="6">Bibtex</a><div class="link-content" data-index="0">Impressive progress in 3D shape extraction led to representations that can capture object geometries with high fidelity. In parallel, primitive-based methods seek to represent objects as semantically consistent part arrangements. However, due to the simplicity of existing primitive representations, these methods fail to accurately reconstruct 3D shapes using a small number of primitives/parts. We address the trade-off between reconstruction quality and number of parts with Neural Parts, a novel 3D primitive representation that defines primitives using an Invertible Neural Network (INN) which implements homeomorphic mappings between a sphere and the target object. The INN allows us to compute the inverse mapping of the homeomorphism, which in turn, enables the efficient computation of both the implicit surface function of a primitive and its mesh, without any additional post-processing. Our model learns to parse 3D objects into semantically consistent part arrangements without any part-level supervision. Evaluations on ShapeNet, D-FAUST and FreiHAND demonstrate that our primitives can capture complex geometries and thus simultaneously achieve geometrically accurate as well as interpretable reconstructions using an order of magnitude fewer primitives than state-of-the-art shape abstraction methods.</div><div class="link-content" data-index="6"><pre>@inproceedings{paschalidou2021nps,
+            <!-- start publication list --><div class="paper"><div class="image"><img src="imgs/teasers/mae-clip.png" alt="Self Supervision Does Not Help Natural Language Supervision at Scale" /></div><div class="content"><div class="paper-title"><a href="">Self Supervision Does Not Help Natural Language Supervision at Scale</a></div><div class="authors"><a href="" class="author">F. Weers</a><a href="http://vaishaal.com/" class="author">V. Shankar</a><strong class="author">A. Katharopoulos</strong><a href="" class="author">Y. Yang</a><a href="" class="author">T. Gunter</a></div><div class="conference">CVPR, 2023</div><div class="links"><a href="#" data-type="Abstract" data-index="0">Abstract</a><a href="https://arxiv.org/pdf/2301.07836" data-type="Paper">Paper</a><a href="#" data-type="Bibtex" data-index="2">Bibtex</a><div class="link-content" data-index="0">Self supervision and natural language supervision have emerged as two exciting ways to train general purpose image encoders which excel at a variety of downstream tasks. Recent works such as M3AE [31] and SLIP [64] have suggested that these approaches can be effectively combined, but most notably their results use small (<20M examples) pre-training datasets and don’t effectively reflect the large-scale regime (>100M samples) that is commonly used for these approaches. Here we investigate whether a similar approach can be effective when trained with a much larger amount of data. We find that a combination of two state of the art approaches: masked auto-encoders, MAE [38] and contrastive language image pre-training, CLIP [69] provides a benefit over CLIP when trained on a corpus of 11.3M image-text pairs, but little to no benefit (as evaluated on a suite of common vision tasks) over CLIP when trained on a large corpus of 1.4B images. Our work provides some much needed clarity into the effectiveness (or lack thereof) of self supervision for large-scale image-text training.</div><div class="link-content" data-index="2"><pre>@inproceedings{weers2023mae_clip,
+    title={Self Supervision Does Not Help Natural Language Supervision at Scale},
+    author={Weers, F. and Shankar, V. and Katharopoulos, A. and Yang, Y. and Gunter, T.},
+    booktitle={{Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)}},
+    year={2023},
+    url={https://arxiv.org/pdf/2301.07836}
+}</pre></div></div></div><div class="clear"></div></div><div class="paper"><div class="image"><img src="imgs/teasers/neural_parts.png" alt="Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks" /></div><div class="content"><div class="paper-title"><a href="https://paschalidoud.github.io/neural_parts">Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks</a></div><div class="authors"><a href="https://paschalidoud.github.io/" class="author">D. Paschalidou</a><strong class="author">A. Katharopoulos</strong><a href="http://www.cvlibs.net/" class="author">A. Geiger</a><a href="https://www.cs.utoronto.ca/~fidler/" class="author">S. Fidler</a></div><div class="conference">CVPR, 2021</div><div class="links"><a href="#" data-type="Abstract" data-index="0">Abstract</a><a href="https://arxiv.org/pdf/2103.10429" data-type="Paper">Paper</a><a href="https://paschalidoud.github.io/neural_parts" data-type="Explore">Explore</a><a href="https://www.youtube.com/watch?v=6WK3B0IZJsw" data-type="Video">Video</a><a href="https://paschalidoud.github.io/data/Paschalidou2021CVPR_poster.pdf" data-type="Poster">Poster</a><a href="https://github.com/paschalidoud/neural_parts" data-type="Code">Code</a><a href="#" data-type="Bibtex" data-index="6">Bibtex</a><div class="link-content" data-index="0">Impressive progress in 3D shape extraction led to representations that can capture object geometries with high fidelity. In parallel, primitive-based methods seek to represent objects as semantically consistent part arrangements. However, due to the simplicity of existing primitive representations, these methods fail to accurately reconstruct 3D shapes using a small number of primitives/parts. We address the trade-off between reconstruction quality and number of parts with Neural Parts, a novel 3D primitive representation that defines primitives using an Invertible Neural Network (INN) which implements homeomorphic mappings between a sphere and the target object. The INN allows us to compute the inverse mapping of the homeomorphism, which in turn, enables the efficient computation of both the implicit surface function of a primitive and its mesh, without any additional post-processing. Our model learns to parse 3D objects into semantically consistent part arrangements without any part-level supervision. Evaluations on ShapeNet, D-FAUST and FreiHAND demonstrate that our primitives can capture complex geometries and thus simultaneously achieve geometrically accurate as well as interpretable reconstructions using an order of magnitude fewer primitives than state-of-the-art shape abstraction methods.</div><div class="link-content" data-index="6"><pre>@inproceedings{paschalidou2021nps,
     title={Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks},
     author={Paschalidou, D. and Katharopoulos, A. and Geiger, A. and Fidler, S.},
     booktitle={{Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)}},
